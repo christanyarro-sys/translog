@@ -1,0 +1,163 @@
+
+<!-- BANNIÈRE -->
+<section class="page-banner">
+  <h1 class="fade-up" animateOnScroll><i class="fas fa-search-location"></i> Suivi de Colis</h1>
+  <p class="fade-up delay-1">Suivez vos marchandises en temps réel</p>
+</section>
+
+<!-- FORMULAIRE DE SUIVI -->
+<section class="suivi-section">
+  <div class="suivi-card fade-up" animateOnScroll>
+    <h2 class="fade-up delay-2"><i class="fas fa-box"></i> Entrez votre numéro de suivi</h2>
+    <p class="fade-up delay-3">Saisissez le numéro de référence fourni lors de votre expédition</p>
+
+    <div class="search-box">
+      <input
+        type="text"
+        [(ngModel)]="numeroSuivi"
+        placeholder="Ex: TL-2024-123456"
+        class="search-input"
+        (keyup.enter)="rechercherColis()"
+      />
+      <button class="search-btn" (click)="rechercherColis()">
+        <i class="fas fa-search"></i> Rechercher
+      </button>
+    </div>
+
+    <!-- RÉSULTAT -->
+    <div class="resultat" *ngIf="colisInfo">
+      <div class="resultat-header">
+        <div class="ref">
+          <i class="fas fa-hashtag"></i>
+          <span>Référence : <strong>{{ colisInfo.reference }}</strong></span>
+        </div>
+        <div class="statut" [ngClass]="colisInfo.statutClass">
+          <i class="fas fa-circle"></i> {{ colisInfo.statut }}
+        </div>
+      </div>
+
+      <div class="infos-grid">
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <span class="label">Origine</span>
+            <span class="value">{{ colisInfo.origine }}</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-flag-checkered"></i>
+          <div>
+            <span class="label">Destination</span>
+            <span class="value">{{ colisInfo.destination }}</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-ship"></i>
+          <div>
+            <span class="label">Mode de transport</span>
+            <span class="value">{{ colisInfo.transport }}</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-calendar-alt"></i>
+          <div>
+            <span class="label">Livraison estimée</span>
+            <span class="value">{{ colisInfo.livraison }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIMELINE -->
+      <div class="timeline">
+        <h3><i class="fas fa-history"></i> Historique du colis</h3>
+        <div class="timeline-item" *ngFor="let etape of colisInfo.etapes"
+             [ngClass]="{'active': etape.actif}">
+          <div class="timeline-icon">
+            <i [class]="etape.icone"></i>
+          </div>
+          <div class="timeline-content">
+            <h4>{{ etape.titre }}</h4>
+            <p>{{ etape.description }}</p>
+            <span class="date">{{ etape.date }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ERREUR -->
+    <div class="erreur" *ngIf="erreur">
+      <i class="fas fa-exclamation-triangle"></i>
+      <p>Aucun colis trouvé avec ce numéro. Vérifiez votre référence.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INFO SECTION -->
+<section class="info-section">
+  <h2 class="section-title">Comment ça <span>fonctionne ?</span></h2>
+  <div class="steps-grid">
+    <div class="step fade-up delay-1" animateOnScroll>
+      <div class="step-number">1</div>
+      <i class="fas fa-file-alt"></i>
+      <h3>Expédition créée</h3>
+      <p>Votre dossier est enregistré et un numéro de suivi vous est attribué</p>
+    </div>
+    <div class="step fade-up delay-2" animateOnScroll>
+       <div class="step-number">2</div>
+      <i class="fas fa-truck-loading"></i>
+      <h3>Prise en charge</h3>
+      <p>Vos marchandises sont collectées et préparées pour l'expédition</p>
+    </div>
+    <div class="step fade-up delay-3" animateOnScroll>
+       <div class="step-number">3</div> 
+      <div class="step-number">3</div>
+      <i class="fas fa-route"></i>
+      <h3>En transit</h3>
+      <p>Vos marchandises sont en cours de transport vers la destination</p>
+    </div>
+    <div class="step fade-up delay-4" animateOnScroll >
+      <div class="step-number">4</div>
+      <i class="fas fa-check-circle"></i>
+      <h3>Livraison</h3>
+      <p>Vos marchandises sont livrées à destination</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- INFOS DE CONTACT -->
+<section class="infos-section">
+  <div class="infos-inner fade-up" animateOnScroll>
+    <span class="section-tag centered">Nos coordonnées</span>
+    <h2 class="infos-title">Parlons de votre <span>projet</span></h2>
+    <p class="infos-subtitle">Que vous ayez une question, un projet ou besoin d'un devis, notre équipe est là pour vous accompagner.</p>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <h4>Adresse</h4>
+        <p>Boulevard de la Liberté, Akwa<br>Douala, Cameroun</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><i class="fas fa-phone"></i></div>
+        <h4>Téléphone</h4>
+        <p>+237 6XX XXX XXX<br>+237 2XX XXX XXX</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+        <h4>Email</h4>
+        <p>contact&#64;translog.cm<br>devis&#64;translog.cm</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><i class="fas fa-clock"></i></div>
+        <h4>Horaires</h4>
+        <p>Lun – Ven : 08h00 – 18h00<br>Sam : 08h00 – 13h00</p>
+      </div>
+    </div>
+    <div class="social-links fade-up delay-2" animateOnScroll>
+      <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+    </div>
+  </div>
+</section>

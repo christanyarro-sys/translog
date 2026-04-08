@@ -1,0 +1,262 @@
+.page-banner {
+  background:
+    linear-gradient(135deg, rgba(26,46,74,0.88) 0%, rgba(46,74,106,0.88) 100%),
+    url('../../../assets/images/acceuil/acceuil.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 60px 80px;
+  text-align: center;
+}
+
+/* ===== HISTOIRE ===== */
+.histoire {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 70px 80px;
+  background-color: #ffffff;
+}
+
+.histoire-image i {
+  font-size: 200px;
+  color: #e8f0fe;
+}
+
+.histoire-text h2 {
+  color: #1a2e4a;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.histoire-text h2 span {
+  color: #f0a500;
+}
+
+.histoire-text p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.histoire-stats {
+  display: flex;
+  gap: 30px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f8f9fa;
+  padding: 12px 20px;
+  border-radius: 8px;
+}
+
+.stat i {
+  color: #f0a500;
+  font-size: 20px;
+}
+
+.stat span {
+  color: #1a2e4a;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* ===== VALEURS ===== */
+.valeurs {
+  padding: 70px 80px;
+  background-color: #f8f9fa;
+}
+
+.section-title {
+  text-align: center;
+  color: #1a2e4a;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 50px;
+}
+
+.section-title span {
+  color: #f0a500;
+}
+
+.valeurs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.valeur-card {
+  background: #ffffff;
+  padding: 35px 25px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.valeur-card:hover {
+  transform: translateY(-5px);
+}
+
+.valeur-card i {
+  font-size: 40px;
+  color: #f0a500;
+  margin-bottom: 15px;
+}
+
+.valeur-card h3 {
+  color: #1a2e4a;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.valeur-card p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ===== ÉQUIPE ===== */
+.equipe {
+  padding: 70px 80px;
+  background-color: #ffffff;
+}
+
+.equipe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.membre-card {
+  text-align: center;
+  padding: 40px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.membre-card:hover {
+  transform: translateY(-5px);
+}
+
+.membre-avatar {
+  width: 90px;
+  height: 90px;
+  background-color: #e8f0fe;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.membre-avatar i {
+  font-size: 40px;
+  color: #1a2e4a;
+}
+
+.membre-card h3 {
+  color: #1a2e4a;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.poste {
+  color: #f0a500;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.description {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ===== CTA ===== */
+.cta {
+  background: linear-gradient(135deg, #1a2e4a 0%, #2e4a6a 100%);
+  padding: 70px 40px;
+  text-align: center;
+}
+
+.cta h2 {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.cta p {
+  color: #c0d0e0;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  background-color: #f0a500;
+  color: #1a2e4a;
+  padding: 14px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  background-color: #d4920a;
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE TABLETTE ===== */
+@media (max-width: 1024px) {
+  .page-banner { padding: 50px 40px; }
+  .histoire { padding: 60px 40px; gap: 40px; }
+  .histoire-image i { font-size: 150px; }
+  .valeurs { padding: 60px 40px; }
+  .valeurs-grid { grid-template-columns: repeat(2, 1fr); }
+  .equipe { padding: 60px 40px; }
+}
+
+/* ===== RESPONSIVE MOBILE ===== */
+@media (max-width: 768px) {
+  .page-banner { padding: 40px 20px; }
+  .page-banner h1 { font-size: 26px; }
+
+  .histoire {
+    flex-direction: column;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .histoire-image i { font-size: 100px; }
+  .histoire-stats { justify-content: center; }
+
+  .valeurs { padding: 50px 20px; }
+  .valeurs-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .equipe { padding: 50px 20px; }
+  .equipe-grid { grid-template-columns: 1fr; }
+
+  .cta { padding: 50px 20px; }
+  .cta h2 { font-size: 24px; }
+}
+
+/* ===== RESPONSIVE PETIT MOBILE ===== */
+@media (max-width: 480px) {
+  .valeurs-grid { grid-template-columns: 1fr; }
+  .histoire-stats { flex-direction: column; align-items: center; }
+}

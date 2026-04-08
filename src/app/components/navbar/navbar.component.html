@@ -1,0 +1,21 @@
+<nav class="navbar">
+  <div class="logo">
+    <span class="logo-icon"></span>
+    <span class="logo-text">TRANSLOG</span>
+  </div>
+
+  <!-- Bouton menu hamburger pour mobile -->
+  <button class="hamburger" (click)="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <ul class="nav-links" [class.open]="menuOpen">
+    <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="closeMenu()">Accueil</a></li>
+    <li><a routerLink="/a-propos" routerLinkActive="active" (click)="closeMenu()">À propos</a></li>
+    <li><a routerLink="/services" routerLinkActive="active" (click)="closeMenu()">Services</a></li>
+    <li><a routerLink="/suivi-colis" routerLinkActive="active" (click)="closeMenu()">Suivi colis</a></li>
+    <li><a routerLink="/contacts" routerLinkActive="active" (click)="closeMenu()">Contact</a></li>
+  </ul>
+</nav>

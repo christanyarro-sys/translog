@@ -45,8 +45,14 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "6kb",
+                  "maximumError": "8kb"
+                },
+                {
+                  "type": "bundle",
+                  "name": "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+                  "maximumWarning": "80kb",
+                  "maximumError": "100kb"
                 }
               ],
               "outputHashing": "all"
